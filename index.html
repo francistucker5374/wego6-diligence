@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>WEGO6 — go / no-go, NL · DE · UK</title>
+<meta name="description" content="Demand, competition, offer and price check on the WEGO6 weight-loss offer across the Netherlands, Germany and the UK.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101317'/%3E%3Crect x='6' y='9' width='20' height='14' rx='3' fill='none' stroke='%23c98500' stroke-width='2'/%3E%3Ccircle cx='12' cy='16' r='2.4' fill='%23c98500'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%23c98500'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101317; --panel:#171b21; --panel2:#1e232a; --line:#2a313a; --line-soft:#20262d;
+  --fg:#e8ecf0; --fg2:#9ba5b1; --fg3:#69737f;
+  --foil:#c7ced6;
+  --bar:#c98500; --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --display:'Big Shoulders Display',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pad:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--fg)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--line);padding:clamp(28px,6vw,56px) 0 0}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg3)}
+.mast h1{font-family:var(--display);font-weight:800;font-size:clamp(52px,13vw,132px);line-height:.86;letter-spacing:-.01em;margin:.18em 0 .1em;text-transform:uppercase}
+.mast h1 span{color:var(--bar)}
+.standfirst{font-size:clamp(16px,2.3vw,20px);color:var(--fg2);max-width:62ch;margin:0 0 1.6em}
+.meta{display:flex;flex-wrap:wrap;gap:6px 26px;font-family:var(--mono);font-size:11.5px;color:var(--fg3);border-top:1px solid var(--line-soft);padding:14px 0 18px}
+.meta b{color:var(--fg2);font-weight:500}
+
+/* ---------- verdict lanes (signature) ---------- */
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:clamp(28px,5vw,44px) 0}
+.lane{background:var(--panel);padding:clamp(18px,3vw,26px);position:relative;min-height:190px;display:flex;flex-direction:column}
+.lane .geo{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1;letter-spacing:.01em}
+.lane .payout{font-family:var(--mono);font-size:12.5px;color:var(--fg2);margin-top:6px}
+.lane .foot{margin-top:auto;padding-top:22px}
+.lane .call{font-family:var(--display);font-weight:700;font-size:clamp(20px,3.4vw,28px);letter-spacing:.02em;text-transform:uppercase}
+.lane .why{font-size:13.5px;color:var(--fg2);margin:8px 0 0;line-height:1.5}
+.lane[data-v="go"] .call{color:var(--good)}
+.lane[data-v="care"] .call{color:var(--warn)}
+.lane[data-v="dead"] .call{color:var(--critical)}
+.lane[data-v="dead"] .geo{color:var(--fg3);text-decoration:line-through;text-decoration-thickness:5px;text-decoration-color:var(--critical)}
+.lane .tag{position:absolute;top:0;right:0;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px;color:var(--ink);background:var(--foil)}
+.lane[data-v="go"] .tag{background:var(--good);color:#04140a}
+.lane[data-v="care"] .tag{background:var(--warn);color:#1a1200}
+.lane[data-v="dead"] .tag{background:var(--critical);color:#fff}
+
+/* ---------- generic section ---------- */
+section{padding:clamp(40px,7vw,76px) 0;border-bottom:1px solid var(--line-soft)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,5.4vw,50px);line-height:1;margin:0 0 .1em;letter-spacing:.005em;text-transform:uppercase}
+.h2sub{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bar);margin:0 0 1.4em}
+h3{font-family:var(--body);font-weight:600;font-size:17px;margin:2em 0 .5em}
+p{margin:0 0 1.1em;max-width:74ch}
+.lede{font-size:clamp(17px,2.2vw,21px);color:var(--fg);max-width:66ch}
+ul{padding-left:1.1em;margin:0 0 1.1em;max-width:74ch}
+li{margin-bottom:.5em}
+strong{font-weight:600;color:#fff}
+.mono{font-family:var(--mono)}
+
+/* ---------- TOC ---------- */
+.toc{background:var(--panel);border:1px solid var(--line);padding:18px 20px;margin:0 0 8px}
+.toc ol{margin:0;padding-left:0;list-style:none;counter-reset:t;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 22px}
+.toc li{counter-increment:t;margin:0}
+.toc a{display:block;padding:5px 0;font-size:14.5px;color:var(--fg2);text-decoration:none;border-bottom:1px solid transparent}
+.toc a:hover,.toc a:focus{color:var(--fg);border-bottom-color:var(--bar)}
+.toc a::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:var(--fg3);margin-right:10px}
+
+/* ---------- chart ---------- */
+.viz{background:var(--panel);border:1px solid var(--line);padding:clamp(18px,3.4vw,30px);margin:0 0 18px}
+.viz h4{font-family:var(--body);font-weight:600;font-size:16.5px;margin:0 0 2px}
+.viz .cap{font-size:13px;color:var(--fg3);margin:0 0 22px}
+/* Labels sit above their bar so the plot area is the full container width —
+   that is what lets the reference line land on the true value on the same scale. */
+.rows{position:relative;padding-top:26px}
+.row{margin-bottom:18px}
+.row:last-child{margin-bottom:0}
+.row .lbl{font-size:13px;color:var(--fg3);line-height:1.35;margin-bottom:5px}
+.row .lbl b{color:var(--fg);font-weight:600;font-size:14.5px;margin-right:8px}
+.track{position:relative;height:30px;display:flex;align-items:center}
+.fill{height:24px;background:var(--bar);border-radius:0 4px 4px 0;min-width:2px}
+.row[data-hi="1"] .fill{background:var(--serious)}
+.val{font-family:var(--mono);font-size:14px;font-weight:600;margin-left:10px;white-space:nowrap}
+.refline{position:absolute;top:20px;bottom:0;border-left:2px dashed var(--warn);pointer-events:none}
+.reftag{position:absolute;top:0;font-family:var(--mono);font-size:11px;color:var(--warn);white-space:nowrap;line-height:1.3;transform:translateX(-50%)}
+.vizfoot{margin:30px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--fg2)}
+.vizfoot b{color:#fff}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg3);background:var(--panel2);font-weight:500;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n{font-family:var(--mono);white-space:nowrap}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:baseline}
+.d-us{background:var(--serious)} .d-shop{background:var(--foil)} .d-aff{background:var(--bar)} .d-reg{background:var(--critical)}
+
+/* ---------- callouts ---------- */
+.note{border-left:3px solid var(--bar);background:var(--panel);padding:16px 18px;margin:0 0 20px}
+.note.bad{border-left-color:var(--critical)}
+.note.good{border-left-color:var(--good)}
+.note.warn{border-left-color:var(--warn)}
+.note p:last-child{margin-bottom:0}
+.note .nt{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3);display:block;margin-bottom:6px}
+
+/* ---------- autocomplete chips ---------- */
+.geoblock{margin:0 0 26px}
+.geoblock h3{margin-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--mono);font-size:12.5px;background:var(--panel2);border:1px solid var(--line);padding:5px 10px;color:var(--fg2)}
+.chip b{color:var(--bar);font-weight:500}
+
+/* ---------- q list ---------- */
+.qs{counter-reset:q;list-style:none;padding:0;max-width:74ch}
+.qs li{counter-increment:q;padding:14px 0 14px 46px;border-bottom:1px solid var(--line-soft);position:relative;margin:0}
+.qs li::before{content:"Q" counter(q);position:absolute;left:0;top:14px;font-family:var(--mono);font-size:11.5px;color:var(--bar)}
+.qs li:last-child{border-bottom:none}
+
+footer{padding:36px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--fg3)}
+footer a{color:var(--fg2)}
+
+@media (max-width:760px){
+  .lanes{grid-template-columns:1fr}
+  .lane{min-height:0}
+  .row{grid-template-columns:1fr}
+  .track{height:30px}
+  .reftag{position:static;transform:none;text-align:left;margin-bottom:6px}
+  .refline{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="kicker">Offer diligence · Stellar Yonder · 27 July 2026</div>
+    <h1>Wego<span>6</span></h1>
+    <p class="standfirst">Real demand, real competitors, a real product on real pharmacy shelves — and a commission that is bigger than the price of the product it pays for. Here is the whole picture before we build anything.</p>
+    <div class="meta">
+      <span><b>Geos asked:</b> NL · DE · UK</span>
+      <span><b>Payout:</b> $75–$80 CPA</span>
+      <span><b>Our status:</b> approved</span>
+      <span><b>Sources:</b> live Everflow API, geo-accurate SERPs, funnel checkouts, Trustpilot, German regulators</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="lanes">
+    <div class="lane" data-v="go">
+      <span class="tag">Build first</span>
+      <div class="geo">NL</div>
+      <div class="payout">Offer 208 · $75 CPA · approved</div>
+      <div class="foot"><div class="call">Go</div><p class="why">Strong brand demand, thin and beatable competitor set, no Dutch pharmacy chain undercutting the funnel.</p></div>
+    </div>
+    <div class="lane" data-v="care">
+      <span class="tag">Eyes open</span>
+      <div class="geo">DE</div>
+      <div class="payout">Offer 229/230 · $75–$80 · approved</div>
+      <div class="foot"><div class="call">Go, hard mode</div><p class="why">Biggest demand of the three — but DocMorris and Shop&nbsp;Apotheke sell it for a third of our funnel price, on page one of the same search.</p></div>
+    </div>
+    <div class="lane" data-v="dead">
+      <span class="tag">Blocked</span>
+      <div class="geo">UK</div>
+      <div class="payout">No offer exists</div>
+      <div class="foot"><div class="call">Can't run</div><p class="why">Wego6 has 11 offers across 12 countries. None is UK. The funnel has no English version — <span class="mono">/en/</span> returns 404.</p></div>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#chart">The number that decides it</a></li>
+      <li><a href="#demand">Demand check</a></li>
+      <li><a href="#trends">Google Trends — not captured</a></li>
+      <li><a href="#serp">Who already ranks</a></li>
+      <li><a href="#trust">The trust problem</a></li>
+      <li><a href="#offer">The offer, exactly</a></li>
+      <li><a href="#build">What I'd build</a></li>
+      <li><a href="#ask">What I need from you</a></li>
+    </ol>
+  </nav>
+</div>
+
+<section id="chart">
+  <div class="wrap">
+    <h2>The number that decides it</h2>
+    <p class="h2sub">One product · one 90-day supply · three places to buy it</p>
+    <p class="lede">Stellar Yonder pays us <strong>$75 (€65.85)</strong> for one sale. The same 90-day supply of Wego6 sits on DocMorris and Shop&nbsp;Apotheke for <strong>€39.90</strong>. Our commission is larger than the retail price of the product.</p>
+
+    <div class="viz">
+      <h4>What a 90-day supply of Wego6 costs, by channel</h4>
+      <p class="cap">Funnel prices read from the live checkout (identical on the NL and DE funnels). Pharmacy prices from each retailer's own product data, EAN 4252010810520.</p>
+      <div class="rows">
+        <div class="reftag" style="left:45.5%">€65.85 — our commission per sale</div>
+        <div class="refline" style="left:45.5%"></div>
+        <div class="row" data-hi="1">
+          <div class="lbl"><b>Our affiliate funnel</b>buywcaps.com — 90-day pack</div>
+          <div class="track"><div class="fill" style="width:76%"></div><span class="val">€109.95</span></div>
+        </div>
+        <div class="row">
+          <div class="lbl"><b>Shop Apotheke</b>90 capsules</div>
+          <div class="track"><div class="fill" style="width:27.6%"></div><span class="val">€39.90</span></div>
+        </div>
+        <div class="row">
+          <div class="lbl"><b>DocMorris</b>90 capsules</div>
+          <div class="track"><div class="fill" style="width:27.6%"></div><span class="val">€39.90</span></div>
+        </div>
+      </div>
+      <p class="vizfoot">Read it twice. <b>Our funnel charges 2.76× the pharmacy price</b> for the same supply — and <b>our commission alone (€65.85) is 65% more than the pharmacy's total price</b>. Both pharmacies rank on page one for <span class="mono">wego6</span> in Germany, above every affiliate page.</p>
+    </div>
+
+    <div class="note warn">
+      <span class="nt">Second economic tell</span>
+      <p>The funnel's cheapest package is <strong>€54.90</strong>. Our payout on it is <strong>€65.85</strong> — <strong>120% of the gross sale</strong>. The offer only funds itself when buyers take the 2- or 3-pack, yet the funnel's own "7 out of 10 people choose this" badge sits on the starter pack. The Trustpilot complaints about repeated charges and an <em>Abofalle</em> (subscription trap) are the plausible explanation for how a €54.90 sale pays a €65.85 commission.</p>
+    </div>
+  </div>
+</section>
+
+<section id="demand">
+  <div class="wrap">
+    <h2>Demand check</h2>
+    <p class="h2sub">Bare-brand autocomplete, country domains, controls verified</p>
+    <p>This is the gate that failed Glowzi in 7 geos out of 7 and RetaFit in 5 out of 5. <strong>Wego6 passes in all three.</strong> Every suggestion below carries Google's <span class="mono">512</span> subtype, meaning real country-level query data rather than generic string-matching. Control queries returned different results per country, so the geo targeting is genuinely working.</p>
+
+    <div class="geoblock">
+      <h3>Netherlands — google.nl</h3>
+      <div class="chips">
+        <span class="chip">wego6 <b>capsules</b></span><span class="chip">wego6 <b>ervaringen</b></span><span class="chip">wego6 <b>kopen</b></span><span class="chip">wego6 <b>tablets</b></span><span class="chip">wego 6 <b>waar te koop</b></span><span class="chip">wego 6 <b>bestellen</b></span><span class="chip">wego 6 <b>dm</b></span><span class="chip">wego 6 <b>387 mg</b></span><span class="chip">wego6 <b>tablets review</b></span>
+      </div>
+    </div>
+
+    <div class="geoblock">
+      <h3>Germany — google.de</h3>
+      <div class="chips">
+        <span class="chip">wego6 <b>erfahrungen</b></span><span class="chip">wego6 <b>kaufen</b></span><span class="chip">wego6 <b>seriös</b></span><span class="chip">wego6 <b>fake</b></span><span class="chip">wego6 <b>test</b></span><span class="chip">wego6 <b>kapseln</b></span><span class="chip">wego6 <b>preis</b></span><span class="chip">wego6 <b>inhaltsstoffe</b></span><span class="chip">wego 6 <b>höhle der löwen</b></span><span class="chip">wego6 <b>dm</b></span>
+      </div>
+    </div>
+
+    <div class="geoblock">
+      <h3>United Kingdom — google.co.uk</h3>
+      <div class="chips">
+        <span class="chip">wego 6 <b>tablets</b></span><span class="chip">wego 6 <b>reviews</b></span><span class="chip">wego 6 <b>boots</b></span><span class="chip">wego 6 <b>dragons den</b></span><span class="chip">wego6 <b>is it legit</b></span><span class="chip">wego6 <b>trustpilot</b></span><span class="chip">wego6 <b>what is it</b></span><span class="chip">wego 6 <b>do they work</b></span>
+      </div>
+      <p style="margin-top:14px">UK demand is real, but the bare query <span class="mono">wego6</span> also pulls Google straight to <strong>Wegovy</strong> — the brand name collides with the drug it is imitating. And we have nothing to sell there anyway.</p>
+    </div>
+
+    <div class="note good">
+      <span class="nt">Verdict</span>
+      <p>The buying words are all present — <em>kopen, kaufen, bestellen, waar te koop, preis</em> — alongside the doubt words we know convert best: <em>seriös, fake, ervaringen, is it legit, trustpilot</em>. This is a live brand people are actively researching before buying, not an empty SERP.</p>
+    </div>
+  </div>
+</section>
+
+<section id="trends">
+  <div class="wrap">
+    <h2>Google Trends — not captured</h2>
+    <p class="h2sub">Stating this plainly rather than describing charts I don't have</p>
+    <p>You asked for the Trends read and I could not get it. Google's Trends data endpoint (<span class="mono">widgetdata/multiline</span>) returned <strong>429 Too Many Requests on 33 consecutive attempts</strong> — from our own server IP and from fresh residential exits in NL, DE, GB and US alike. The Trends page itself loads; only the chart data is refused, so a screenshot right now would show "Something went wrong", not a trendline.</p>
+    <p>A retry loop is still running in the background against fresh exits. <strong>I have not described, estimated or inferred a single Trends figure</strong> — after the Lyvora mistake, a number I cannot show you is worth nothing.</p>
+    <div class="note">
+      <span class="nt">What stands in for it</span>
+      <p>The demand evidence here is arguably harder than a Trends line: real country-level autocomplete data, a 231-review Trustpilot profile, listings on Amazon, eBay, idealo, Kaufland, OTTO, Douglas, medpex, DocMorris and Shop Apotheke, plus a dozen affiliate sites competing for the term. Nobody builds that around a brand with no searches.</p>
+    </div>
+  </div>
+</section>
+
+<section id="serp">
+  <div class="wrap">
+    <h2>Who already ranks</h2>
+    <p class="h2sub">Live, geo-accurate SERPs · residential exits · zero paid ads in all three countries</p>
+    <p class="lede">Your question was whether people are still making sites rank on this product. <strong>Yes — aggressively, and right now.</strong></p>
+
+    <h3>Germany — <span class="mono">wego6</span></h3>
+    <div class="tw"><table>
+      <thead><tr><th>#</th><th>Domain</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>de.trustpilot.com</td><td><span class="dot d-reg"></span>Reviews — 2.7/5</td></tr>
+        <tr><td class="n">2–3</td><td>shop-apotheke.com</td><td><span class="dot d-shop"></span>Real pharmacy, €39.90</td></tr>
+        <tr><td class="n">4</td><td>mvz-pfeiffer.de</td><td><span class="dot d-aff"></span>Affiliate review page on a medical-centre domain</td></tr>
+        <tr><td class="n">5</td><td>amazon.de</td><td><span class="dot d-shop"></span>Marketplace</td></tr>
+        <tr><td class="n">6</td><td>idealo.de</td><td><span class="dot d-shop"></span>Price comparison</td></tr>
+        <tr><td class="n">7</td><td>docmorris.de</td><td><span class="dot d-shop"></span>Real pharmacy, €39.90</td></tr>
+        <tr><td class="n">8</td><td>kaufland.de</td><td><span class="dot d-shop"></span>Marketplace</td></tr>
+        <tr><td class="n">9</td><td>stern-apotheke-frechen.de</td><td><span class="dot d-aff"></span>Affiliate review page on a pharmacy domain</td></tr>
+        <tr><td class="n">10</td><td>medpex.de</td><td><span class="dot d-shop"></span>Real pharmacy</td></tr>
+      </tbody>
+    </table></div>
+    <p>On <span class="mono">wego6 seriös</span> and <span class="mono">wego6 kaufen</span> the same pattern repeats, plus <strong>praxis-dr-grosse.de</strong>, <strong>praxis-dr-hein.de</strong>, <strong>gesundheitspark-franken.de</strong>, <strong>loewen-apotheke-warendorf.de</strong> and <strong>revistaavft.com</strong>. Roughly a dozen affiliate pages are live on German medical- and pharmacy-looking domains for this one product.</p>
+
+    <h3>Netherlands — <span class="mono">wego6</span></h3>
+    <div class="tw"><table>
+      <thead><tr><th>#</th><th>Domain</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>nl.trustpilot.com</td><td><span class="dot d-reg"></span>Reviews — 2.7/5</td></tr>
+        <tr><td class="n">2</td><td>amazon.co.uk</td><td><span class="dot d-shop"></span>Marketplace (UK listing shown in NL)</td></tr>
+        <tr><td class="n">3</td><td>apotheektgasthuis.nl</td><td><span class="dot d-aff"></span>Affiliate review page</td></tr>
+        <tr><td class="n">4</td><td>apotheekdejol.nl</td><td><span class="dot d-aff"></span>Affiliate review page</td></tr>
+        <tr><td class="n">5</td><td>imperiumherbals.com</td><td><span class="dot d-shop"></span>Third-party shop</td></tr>
+        <tr><td class="n">6</td><td>youtube.com</td><td><span class="dot d-aff"></span>"My experience with Wego6" videos</td></tr>
+        <tr><td class="n">8</td><td>wego6.nl</td><td><span class="dot d-shop"></span>Shop, from €36.65</td></tr>
+        <tr><td class="n">9</td><td>bijlmerapotheek.nl</td><td><span class="dot d-aff"></span>Affiliate review page</td></tr>
+        <tr><td class="n">10</td><td>wego6official.nl</td><td><span class="dot d-aff"></span>Official-lookalike site</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>The Dutch set is weaker than the German one</strong> — four thin pharmacy-styled affiliate pages and no Dutch retail chain undercutting the funnel. That is the opening. Note that someone got there first on the name: <span class="mono">wego6official.nl</span> is live, and <span class="mono">wego6check.nl</span> and <span class="mono">wego6-ervaringen.nl</span> are already registered.</p>
+
+    <h3>United Kingdom — <span class="mono">wego6</span></h3>
+    <p>Amazon UK, Trustpilot, eBay UK, supplementparadise.co.uk and one affiliate page (staffsandstokepharmacies.co.uk) — but positions 3, 4 and 9 are <strong>Wegovy</strong> results from Boots, Oxford Online Pharmacy and gov.uk. Google partly reads "wego6" as a misspelling of the drug. Academic anyway: there is no UK offer.</p>
+
+    <div class="note">
+      <span class="nt">How the competition monetises</span>
+      <p><strong>gesundheitspark-franken.de</strong> and <strong>staffsandstokepharmacies.co.uk</strong> aren't Wego6 specialists — they're multi-offer affiliate farms also running smart glasses, knee sleeves and Nuubu detox patches through <span class="mono">fasttrack39.com</span>. They are exactly our breed of operator, and they are already here. <strong>Zero paid ads appeared on any query in any of the three countries</strong> — this is being fought organically only.</p>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <h2>The trust problem</h2>
+    <p class="h2sub">What a buyer finds when they check the brand</p>
+    <p>This is the OZEM+ and Coolizi pattern again, and it is public:</p>
+    <ul>
+      <li><strong>Trustpilot: 2.7 out of 5 from 231 reviews.</strong> (Careful — those "2 of 5" page titles in the SERP are page numbers, not the rating. The 2.7 comes from Trustpilot's own structured data.)</li>
+      <li><strong>verbraucherschutz.de</strong> publishes "Wego6 is not endorsed by <em>Höhle der Löwen</em>".</li>
+      <li><strong>Verbraucherzentrale</strong> names it in its fake-celebrity-advertising warning — and that page ranks <strong>#3 for "wego6 seriös" and #4 for "wego6 kaufen"</strong>. A consumer body outranks every affiliate on the money query.</li>
+      <li><strong>stern.de</strong> ran an article on the fake <em>Höhle der Löwen</em> appearance; <strong>aponet.de</strong> carries Eckart von Hirschhausen's warning about his likeness being used.</li>
+      <li>Buyer complaints centre on a <strong>subscription trap</strong>, repeated charges, and refused refunds despite the advertised guarantee.</li>
+    </ul>
+    <p>The funnel we would send traffic to carries <strong>fabricated testimonials</strong> ("Emily B., Berlin — verified review"), a <strong>"4.8 stars · 50,000 customers"</strong> claim, and <strong>no company imprint at all</strong> — the NL checkout names no legal entity, no address, no VAT number. The retail version sold through the pharmacies does name one: <strong>Glory Products OÜ, Järvevana tee 9, Tallinn, Estonia</strong>.</p>
+    <div class="note bad">
+      <span class="nt">What this means for the build</span>
+      <p>We cannot write a glowing review of this product and stay on the right side of it. What we <em>can</em> do is what has actually worked for us before: own the <strong>"seriös / Betrug / is it legit"</strong> question honestly, rate it moderately, tell people the truth about the fake TV endorsement — and still carry the affiliate link for readers who decide to buy anyway. Competitors are already occupying that angle, so it's a race, not a blue ocean.</p>
+    </div>
+  </div>
+</section>
+
+<section id="offer">
+  <div class="wrap">
+    <h2>The offer, exactly</h2>
+    <p class="h2sub">Pulled live from Everflow twice, 27 July 2026</p>
+    <div class="tw"><table>
+      <thead><tr><th>Geo</th><th>Offer</th><th>Payout</th><th>Our status</th><th>Funnel</th></tr></thead>
+      <tbody>
+        <tr><td>NL</td><td class="n">208</td><td class="n">$75</td><td>approved</td><td>buywcaps.com/nl — package picker</td></tr>
+        <tr><td>DE / AT / CH</td><td class="n">229 (v7)</td><td class="n">$75</td><td>approved</td><td>lpservhub.com — landing page</td></tr>
+        <tr><td>DE / AT / CH</td><td class="n">230 (v8)</td><td class="n">$80</td><td>approved</td><td>w6plan.lpserv-hub.com — 7-step quiz</td></tr>
+        <tr><td>DK</td><td class="n">226</td><td class="n">$80</td><td>approved</td><td>—</td></tr>
+        <tr><td>SE · BE · FI · FR · IT · LU · NO</td><td class="n">202–209</td><td class="n">$75</td><td>approved</td><td>—</td></tr>
+        <tr><td><strong>UK / GB</strong></td><td class="n">—</td><td class="n">—</td><td><strong>does not exist</strong></td><td><span class="mono">/en/</span> → 404</td></tr>
+      </tbody>
+    </table></div>
+    <p>Eleven Wego6 offers, twelve countries, all approved to us. <strong>UK is not one of them</strong>, and the funnel has no English build — I checked the checkout directly and it returns 404. If you want the UK, it starts with Jennie opening an offer and the advertiser building an English funnel.</p>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <h2>What I'd build</h2>
+    <p class="h2sub">If you say go</p>
+    <p class="lede">A new site, new design, Dutch first and German second — the two places where we actually have something to sell.</p>
+    <ul>
+      <li><strong>Honest-legitimacy review site</strong>, the Lyvora editorial line: a moderate rating, the fake-TV-endorsement fact stated plainly, the pharmacy price named. That last point is uncomfortable but it is also our credibility — and readers who find it themselves at DocMorris will bounce anyway.</li>
+      <li><strong>Own the doubt queries</strong>, which is where the volume and the weak competition meet: <em>wego6 ervaringen · wego6 seriös · wego6 fake · wego6 kopen · wego6 kaufen · wego6 test · wego6 höhle der löwen</em>.</li>
+      <li><strong>NL first.</strong> Four thin competitors, no retail chain undercutting us, $75 a sale. Germany second — more searches but Shop Apotheke, DocMorris and the Verbraucherzentrale all sit on page one.</li>
+      <li>Our own privacy / terms / disclosure / contact pages, full AEO pack, no review markup, no invented star ratings, no fabricated "was" prices.</li>
+      <li><strong>Domains free right now:</strong> <span class="mono">wego6review.com · wego6check.com · wego6kapseln.com · wego6ervaringen.com · wego6guide.com · wego6facts.com · wego6report.com · wego6review.nl · wego6check.de</span>. Taken already: <span class="mono">wego6check.nl · wego6-ervaringen.nl · wego6official.nl</span>.</li>
+    </ul>
+    <div class="note">
+      <span class="nt">Honest expectation</span>
+      <p>This is a fad-brand play with a live clock on it, same as every one of these. The demand is real today; the German retail listings mean part of that demand now converts at a pharmacy instead of through us. NL is the cleaner bet. I'd rather tell you that before we build than after.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ask">
+  <div class="wrap">
+    <h2>What I need from you</h2>
+    <p class="h2sub">Four answers and I start</p>
+    <ol class="qs">
+      <li><strong>Go or no-go</strong> — and if go, NL only, or NL + DE?</li>
+      <li><strong>Domain.</strong> Pick one from the free list above, or send one you already own and I'll build to it.</li>
+      <li><strong>Ask Jennie for a UK offer?</strong> There is UK demand and no way to monetise it today. Worth one message.</li>
+      <li><strong>The price question.</strong> Do we name the €39.90 pharmacy price on our own page? I say yes — it is what a reader will find in one click, and pretending otherwise is what gets these sites reported.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Built 27 July 2026 · Offer data pulled twice from the live Everflow API · SERPs captured through geo-accurate residential exits · prices read from each retailer's own product data and from the live funnel checkout · FX 0.878 USD→EUR confirmed against two independent sources · Google Trends unavailable, retry running.
+  </div>
+</footer>
+
+</body>
+</html>
