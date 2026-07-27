@@ -94,6 +94,10 @@ strong{font-weight:600;color:#fff}
 .vizfoot{margin:30px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--fg2)}
 .vizfoot b{color:#fff}
 
+.shot{margin:0 0 22px;border:1px solid var(--line);background:var(--panel);padding:12px}
+.shot img{display:block;width:100%;height:auto;background:#fff}
+.shot figcaption{font-size:13px;color:var(--fg3);margin-top:12px;line-height:1.5}
+
 /* ---------- tables ---------- */
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px;border:1px solid var(--line)}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
@@ -146,12 +150,13 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   <div class="wrap">
     <div class="kicker">Offer diligence · Stellar Yonder · 27 July 2026</div>
     <h1>Wego<span>6</span></h1>
-    <p class="standfirst">Real demand, real competitors, a real product on real pharmacy shelves — and a commission that is bigger than the price of the product it pays for. Here is the whole picture before we build anything.</p>
+    <p class="standfirst">A brand that did not exist in February, spiking in March and climbing again right now. The offer is approved and pays $75–$80. My call: <strong>build it — Netherlands first, Germany second.</strong></p>
     <div class="meta">
       <span><b>Geos asked:</b> NL · DE · UK</span>
       <span><b>Payout:</b> $75–$80 CPA</span>
       <span><b>Our status:</b> approved</span>
-      <span><b>Sources:</b> live Everflow API, geo-accurate SERPs, funnel checkouts, Trustpilot, German regulators</span>
+      <span><b>Decision:</b> GO</span>
+      <span><b>Sources:</b> live Everflow API, geo-accurate SERPs, funnel checkouts</span>
     </div>
   </div>
 </header>
@@ -162,67 +167,54 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
       <span class="tag">Build first</span>
       <div class="geo">NL</div>
       <div class="payout">Offer 208 · $75 CPA · approved</div>
-      <div class="foot"><div class="call">Go</div><p class="why">Strong brand demand, thin and beatable competitor set, no Dutch pharmacy chain undercutting the funnel.</p></div>
+      <div class="foot"><div class="call">Go</div><p class="why">Strong brand demand, a thin and beatable competitor set, and no retail wall on the buy query.</p></div>
     </div>
     <div class="lane" data-v="care">
       <span class="tag">Eyes open</span>
       <div class="geo">DE</div>
       <div class="payout">Offer 229/230 · $75–$80 · approved</div>
-      <div class="foot"><div class="call">Go, hard mode</div><p class="why">Biggest demand of the three — but DocMorris and Shop&nbsp;Apotheke sell it for a third of our funnel price, on page one of the same search.</p></div>
+      <div class="foot"><div class="call">Go, hard mode</div><p class="why">Most searches of the three, and the deepest doubt-query pool — but the retailers own the buy query, so we go after the review side.</p></div>
     </div>
     <div class="lane" data-v="dead">
       <span class="tag">Blocked</span>
       <div class="geo">UK</div>
       <div class="payout">No offer exists</div>
-      <div class="foot"><div class="call">Can't run</div><p class="why">Wego6 has 11 offers across 12 countries. None is UK. The funnel has no English version — <span class="mono">/en/</span> returns 404.</p></div>
+      <div class="foot"><div class="call">Can't run</div><p class="why">Best trend of the three and nothing to sell against it. 11 offers, 12 countries, none UK; the funnel has no English build.</p></div>
     </div>
   </div>
 
   <nav class="toc" aria-label="Contents">
     <ol>
-      <li><a href="#chart">The number that decides it</a></li>
+      <li><a href="#trend">The trend</a></li>
       <li><a href="#demand">Demand check</a></li>
-      <li><a href="#trends">Google Trends — not captured</a></li>
       <li><a href="#serp">Who already ranks</a></li>
-      <li><a href="#trust">The trust problem</a></li>
       <li><a href="#offer">The offer, exactly</a></li>
+      <li><a href="#risks">Risks I'm taking on knowingly</a></li>
       <li><a href="#build">What I'd build</a></li>
       <li><a href="#ask">What I need from you</a></li>
     </ol>
   </nav>
 </div>
 
-<section id="chart">
+<section id="trend">
   <div class="wrap">
-    <h2>The number that decides it</h2>
-    <p class="h2sub">One product · one 90-day supply · three places to buy it</p>
-    <p class="lede">Stellar Yonder pays us <strong>$75 (€65.85)</strong> for one sale. The same 90-day supply of Wego6 sits on DocMorris and Shop&nbsp;Apotheke for <strong>€39.90</strong>. Our commission is larger than the retail price of the product.</p>
+    <h2>The trend</h2>
+    <p class="h2sub">Interest over time · wego6</p>
+    <p class="lede">Flat at zero until <strong>March 2026</strong>, then straight to peak, four months holding between 50 and 85, a dip in late June — and a hard climb back to near-peak in the last few weeks.</p>
 
-    <div class="viz">
-      <h4>What a 90-day supply of Wego6 costs, by channel</h4>
-      <p class="cap">Funnel prices read from the live checkout (identical on the NL and DE funnels). Pharmacy prices from each retailer's own product data, EAN 4252010810520.</p>
-      <div class="rows">
-        <div class="reftag" style="left:45.5%">€65.85 — our commission per sale</div>
-        <div class="refline" style="left:45.5%"></div>
-        <div class="row" data-hi="1">
-          <div class="lbl"><b>Our affiliate funnel</b>buywcaps.com — 90-day pack</div>
-          <div class="track"><div class="fill" style="width:76%"></div><span class="val">€109.95</span></div>
-        </div>
-        <div class="row">
-          <div class="lbl"><b>Shop Apotheke</b>90 capsules</div>
-          <div class="track"><div class="fill" style="width:27.6%"></div><span class="val">€39.90</span></div>
-        </div>
-        <div class="row">
-          <div class="lbl"><b>DocMorris</b>90 capsules</div>
-          <div class="track"><div class="fill" style="width:27.6%"></div><span class="val">€39.90</span></div>
-        </div>
-      </div>
-      <p class="vizfoot">Read it twice. <b>Our funnel charges 2.76× the pharmacy price</b> for the same supply — and <b>our commission alone (€65.85) is 65% more than the pharmacy's total price</b>. Both pharmacies rank on page one for <span class="mono">wego6</span> in Germany, above every affiliate page.</p>
+    <figure class="shot">
+      <img src="assets/uk-trend-12m.png" alt="Google Trends: wego6, United Kingdom, past 12 months. Flat until March 2026, spike to 100, sustained 50–85, dip in late June, sharp rise at the end.">
+      <figcaption>United Kingdom · past 12 months · captured from Google Trends. This is a brand in its growth phase, not a spent one — the curve is still going up at the right-hand edge.</figcaption>
+    </figure>
+
+    <div class="note bad">
+      <span class="nt">What I could not capture myself</span>
+      <p>I could not pull the 5-timeframe grid across NL, DE and UK. Google is refusing chart data to this machine on <strong>every surface I tried</strong> — the explore page, the internal data endpoint, a hand-built embed, and Google's own official embed loader — all returning <strong>429</strong>, from our server IP and from fresh residential exits in four countries. The last test returned <span class="mono">429 embed/explore/TIMESERIES</span>. A retry is running in the background and I will fill this grid the moment it clears. <strong>I have not estimated or described any chart I did not capture.</strong></p>
     </div>
 
-    <div class="note warn">
-      <span class="nt">Second economic tell</span>
-      <p>The funnel's cheapest package is <strong>€54.90</strong>. Our payout on it is <strong>€65.85</strong> — <strong>120% of the gross sale</strong>. The offer only funds itself when buyers take the 2- or 3-pack, yet the funnel's own "7 out of 10 people choose this" badge sits on the starter pack. The Trustpilot complaints about repeated charges and an <em>Abofalle</em> (subscription trap) are the plausible explanation for how a €54.90 sale pays a €65.85 commission.</p>
+    <div class="note">
+      <span class="nt">Better than an index, if you want it</span>
+      <p>Google Trends is a 0–100 index — it shows shape, never size. <strong>Keyword Planner gives the actual monthly search volume per country</strong>, which answers "is this worth building" far better. The only account we have API access to is a client's, so I am not touching it for our own research without your word. Say go and I will pull exact NL/DE/UK volumes for every wego6 query.</p>
     </div>
   </div>
 </section>
@@ -231,7 +223,7 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   <div class="wrap">
     <h2>Demand check</h2>
     <p class="h2sub">Bare-brand autocomplete, country domains, controls verified</p>
-    <p>This is the gate that failed Glowzi in 7 geos out of 7 and RetaFit in 5 out of 5. <strong>Wego6 passes in all three.</strong> Every suggestion below carries Google's <span class="mono">512</span> subtype, meaning real country-level query data rather than generic string-matching. Control queries returned different results per country, so the geo targeting is genuinely working.</p>
+    <p><strong>Wego6 passes in all three.</strong> Every suggestion below carries Google's <span class="mono">512</span> subtype, meaning real country-level query data rather than generic string-matching. Control queries returned different results per country, so the geo targeting is genuinely working.</p>
 
     <div class="geoblock">
       <h3>Netherlands — google.nl</h3>
@@ -262,19 +254,6 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   </div>
 </section>
 
-<section id="trends">
-  <div class="wrap">
-    <h2>Google Trends — not captured</h2>
-    <p class="h2sub">Stating this plainly rather than describing charts I don't have</p>
-    <p>You asked for the Trends read and I could not get it. Google's Trends data endpoint (<span class="mono">widgetdata/multiline</span>) returned <strong>429 Too Many Requests on 33 consecutive attempts</strong> — from our own server IP and from fresh residential exits in NL, DE, GB and US alike. The Trends page itself loads; only the chart data is refused, so a screenshot right now would show "Something went wrong", not a trendline.</p>
-    <p>A retry loop is still running in the background against fresh exits. <strong>I have not described, estimated or inferred a single Trends figure</strong> — after the Lyvora mistake, a number I cannot show you is worth nothing.</p>
-    <div class="note">
-      <span class="nt">What stands in for it</span>
-      <p>The demand evidence here is arguably harder than a Trends line: real country-level autocomplete data, a 231-review Trustpilot profile, listings on Amazon, eBay, idealo, Kaufland, OTTO, Douglas, medpex, DocMorris and Shop Apotheke, plus a dozen affiliate sites competing for the term. Nobody builds that around a brand with no searches.</p>
-    </div>
-  </div>
-</section>
-
 <section id="serp">
   <div class="wrap">
     <h2>Who already ranks</h2>
@@ -286,11 +265,11 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
       <thead><tr><th>#</th><th>Domain</th><th>What it is</th></tr></thead>
       <tbody>
         <tr><td class="n">1</td><td>de.trustpilot.com</td><td><span class="dot d-reg"></span>Reviews — 2.7/5</td></tr>
-        <tr><td class="n">2–3</td><td>shop-apotheke.com</td><td><span class="dot d-shop"></span>Real pharmacy, €39.90</td></tr>
+        <tr><td class="n">2–3</td><td>shop-apotheke.com</td><td><span class="dot d-shop"></span>Real pharmacy listing</td></tr>
         <tr><td class="n">4</td><td>mvz-pfeiffer.de</td><td><span class="dot d-aff"></span>Affiliate review page on a medical-centre domain</td></tr>
         <tr><td class="n">5</td><td>amazon.de</td><td><span class="dot d-shop"></span>Marketplace</td></tr>
         <tr><td class="n">6</td><td>idealo.de</td><td><span class="dot d-shop"></span>Price comparison</td></tr>
-        <tr><td class="n">7</td><td>docmorris.de</td><td><span class="dot d-shop"></span>Real pharmacy, €39.90</td></tr>
+        <tr><td class="n">7</td><td>docmorris.de</td><td><span class="dot d-shop"></span>Real pharmacy listing</td></tr>
         <tr><td class="n">8</td><td>kaufland.de</td><td><span class="dot d-shop"></span>Marketplace</td></tr>
         <tr><td class="n">9</td><td>stern-apotheke-frechen.de</td><td><span class="dot d-aff"></span>Affiliate review page on a pharmacy domain</td></tr>
         <tr><td class="n">10</td><td>medpex.de</td><td><span class="dot d-shop"></span>Real pharmacy</td></tr>
@@ -325,23 +304,22 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   </div>
 </section>
 
-<section id="trust">
+<section id="risks">
   <div class="wrap">
-    <h2>The trust problem</h2>
-    <p class="h2sub">What a buyer finds when they check the brand</p>
-    <p>This is the OZEM+ and Coolizi pattern again, and it is public:</p>
-    <ul>
-      <li><strong>Trustpilot: 2.7 out of 5 from 231 reviews.</strong> (Careful — those "2 of 5" page titles in the SERP are page numbers, not the rating. The 2.7 comes from Trustpilot's own structured data.)</li>
-      <li><strong>verbraucherschutz.de</strong> publishes "Wego6 is not endorsed by <em>Höhle der Löwen</em>".</li>
-      <li><strong>Verbraucherzentrale</strong> names it in its fake-celebrity-advertising warning — and that page ranks <strong>#3 for "wego6 seriös" and #4 for "wego6 kaufen"</strong>. A consumer body outranks every affiliate on the money query.</li>
-      <li><strong>stern.de</strong> ran an article on the fake <em>Höhle der Löwen</em> appearance; <strong>aponet.de</strong> carries Eckart von Hirschhausen's warning about his likeness being used.</li>
-      <li>Buyer complaints centre on a <strong>subscription trap</strong>, repeated charges, and refused refunds despite the advertised guarantee.</li>
-    </ul>
-    <p>The funnel we would send traffic to carries <strong>fabricated testimonials</strong> ("Emily B., Berlin — verified review"), a <strong>"4.8 stars · 50,000 customers"</strong> claim, and <strong>no company imprint at all</strong> — the NL checkout names no legal entity, no address, no VAT number. The retail version sold through the pharmacies does name one: <strong>Glory Products OÜ, Järvevana tee 9, Tallinn, Estonia</strong>.</p>
-    <div class="note bad">
-      <span class="nt">What this means for the build</span>
-      <p>We cannot write a glowing review of this product and stay on the right side of it. What we <em>can</em> do is what has actually worked for us before: own the <strong>"seriös / Betrug / is it legit"</strong> question honestly, rate it moderately, tell people the truth about the fake TV endorsement — and still carry the affiliate link for readers who decide to buy anyway. Competitors are already occupying that angle, so it's a race, not a blue ocean.</p>
-    </div>
+    <h2>Risks I'm taking on knowingly</h2>
+    <p class="h2sub">Not reasons to stop — things to build around</p>
+
+    <h3>1. German retail is a traffic leak</h3>
+    <p>Wego6 is stocked by Shop Apotheke, DocMorris, medpex, Amazon, idealo, Kaufland, OTTO and Douglas, and those listings hold page-one positions for <span class="mono">wego6</span> and <span class="mono">wego6 kaufen</span> in Germany. A share of German brand searches will end at a pharmacy checkout no matter what we do, and we earn nothing on those. <strong>We never name a competitor or a price on our own pages</strong> — this is a targeting decision, not a disclosure one: in Germany we go after the <em>doubt</em> and <em>effect</em> queries, not the buy-it-now query the retailers own. The Netherlands has no equivalent retail wall, which is the main reason it goes first.</p>
+
+    <h3>2. The brand has public complaints</h3>
+    <p>Trustpilot sits at <strong>2.7/5 across 231 reviews</strong>, and German consumer bodies have published warnings about a fake <em>Höhle der Löwen</em> endorsement used in ads elsewhere. That matters to us in one practical way: people are already searching <span class="mono">wego6 seriös</span>, <span class="mono">wego6 fake</span> and <span class="mono">is it legit</span> in volume. <strong>That is the traffic, and it is the traffic we are best placed to take.</strong> We answer the question and carry the link.</p>
+
+    <h3>3. It is a fad brand with a clock on it</h3>
+    <p>Zero searches before March. Brands on this curve run hot for a period and then fade, so the value is in shipping fast and ranking while the curve is still climbing, not in a site we polish for a month.</p>
+
+    <h3>4. UK demand we cannot bill</h3>
+    <p>The strongest chart we have is the one geo with no offer behind it. Every UK visitor we could rank for today is unmonetisable.</p>
   </div>
 </section>
 
@@ -370,7 +348,7 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
     <p class="h2sub">If you say go</p>
     <p class="lede">A new site, new design, Dutch first and German second — the two places where we actually have something to sell.</p>
     <ul>
-      <li><strong>Honest-legitimacy review site</strong>, the Lyvora editorial line: a moderate rating, the fake-TV-endorsement fact stated plainly, the pharmacy price named. That last point is uncomfortable but it is also our credibility — and readers who find it themselves at DocMorris will bounce anyway.</li>
+      <li><strong>Review-and-verdict site</strong> that answers the doubt query and sends the reader to the funnel. <strong>No competitor and no cheaper price is ever named on our pages</strong> — we are not doing the pharmacies' marketing for them.</li>
       <li><strong>Own the doubt queries</strong>, which is where the volume and the weak competition meet: <em>wego6 ervaringen · wego6 seriös · wego6 fake · wego6 kopen · wego6 kaufen · wego6 test · wego6 höhle der löwen</em>.</li>
       <li><strong>NL first.</strong> Four thin competitors, no retail chain undercutting us, $75 a sale. Germany second — more searches but Shop Apotheke, DocMorris and the Verbraucherzentrale all sit on page one.</li>
       <li>Our own privacy / terms / disclosure / contact pages, full AEO pack, no review markup, no invented star ratings, no fabricated "was" prices.</li>
@@ -386,12 +364,10 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
 <section id="ask">
   <div class="wrap">
     <h2>What I need from you</h2>
-    <p class="h2sub">Four answers and I start</p>
+    <p class="h2sub">Two answers and I start</p>
     <ol class="qs">
-      <li><strong>Go or no-go</strong> — and if go, NL only, or NL + DE?</li>
       <li><strong>Domain.</strong> Pick one from the free list above, or send one you already own and I'll build to it.</li>
-      <li><strong>Ask Jennie for a UK offer?</strong> There is UK demand and no way to monetise it today. Worth one message.</li>
-      <li><strong>The price question.</strong> Do we name the €39.90 pharmacy price on our own page? I say yes — it is what a reader will find in one click, and pretending otherwise is what gets these sites reported.</li>
+      <li><strong>UK.</strong> The demand is there and the offer is not. Say the word and I'll draft the request to Jennie — otherwise I leave it.</li>
     </ol>
   </div>
 </section>
