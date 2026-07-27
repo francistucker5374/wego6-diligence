@@ -98,6 +98,17 @@ strong{font-weight:600;color:#fff}
 .shot img{display:block;width:100%;height:auto;background:#fff}
 .shot figcaption{font-size:13px;color:var(--fg3);margin-top:12px;line-height:1.5}
 
+.geoh{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,30px);text-transform:uppercase;
+  margin:34px 0 12px;display:flex;align-items:baseline;gap:12px}
+.geoh span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--bar);text-transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:0 0 8px}
+.grid .shot{margin:0;border:1px solid var(--line);background:var(--panel);padding:8px}
+.grid .shot img{display:block;width:100%;height:auto;background:#fff}
+.grid .shot figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fg3);margin-top:8px;text-align:center}
+.grid .shot a{display:block}
+.grid .shot a:hover img{outline:2px solid var(--bar);outline-offset:-2px}
+
 /* ---------- tables ---------- */
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px;border:1px solid var(--line)}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
@@ -148,9 +159,9 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
 
 <header class="mast">
   <div class="wrap">
-    <div class="kicker">Offer diligence · Stellar Yonder · 27 July 2026</div>
+    <div class="kicker">Offer diligence · Stellar Yonder · 27 July 2026 · 15 Trends charts captured</div>
     <h1>Wego<span>6</span></h1>
-    <p class="standfirst">A brand that did not exist in February, spiking in March and climbing again right now. The offer is approved and pays $75–$80. My call: <strong>build it — Netherlands first, Germany second.</strong></p>
+    <p class="standfirst">A brand roughly three weeks old in all three countries, still climbing in two of them. The offer is approved and pays $75–$80. My call: <strong>build it — Germany first, Netherlands second.</strong></p>
     <div class="meta">
       <span><b>Geos asked:</b> NL · DE · UK</span>
       <span><b>Payout:</b> $75–$80 CPA</span>
@@ -165,21 +176,21 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   <div class="lanes">
     <div class="lane" data-v="go">
       <span class="tag">Build first</span>
-      <div class="geo">NL</div>
-      <div class="payout">Offer 208 · $75 CPA · approved</div>
-      <div class="foot"><div class="call">Go</div><p class="why">Strong brand demand, a thin and beatable competitor set, and no retail wall on the buy query.</p></div>
+      <div class="geo">DE</div>
+      <div class="payout">Offer 230 · $80 CPA · approved</div>
+      <div class="foot"><div class="call">Go</div><p class="why">Sustained since 4 July and rising at the right edge. Highest payout, biggest market, deepest doubt-query pool. Retailers own the buy query, so we take the review side.</p></div>
     </div>
     <div class="lane" data-v="care">
-      <span class="tag">Eyes open</span>
-      <div class="geo">DE</div>
-      <div class="payout">Offer 229/230 · $75–$80 · approved</div>
-      <div class="foot"><div class="call">Go, hard mode</div><p class="why">Most searches of the three, and the deepest doubt-query pool — but the retailers own the buy query, so we go after the review side.</p></div>
+      <span class="tag">Second</span>
+      <div class="geo">NL</div>
+      <div class="payout">Offer 208 · $75 CPA · approved</div>
+      <div class="foot"><div class="call">Go, second</div><p class="why">Thinnest competitor set of the three and no retail wall — but the curve is sitting lower in its own range than Germany's.</p></div>
     </div>
     <div class="lane" data-v="dead">
       <span class="tag">Blocked</span>
       <div class="geo">UK</div>
       <div class="payout">No offer exists</div>
-      <div class="foot"><div class="call">Can't run</div><p class="why">Best trend of the three and nothing to sell against it. 11 offers, 12 countries, none UK; the funnel has no English build.</p></div>
+      <div class="foot"><div class="call">Can't run</div><p class="why">Steepest curve of the three, at its 30-day high two days ago — and nothing to sell against it. 11 offers, 12 countries, none UK; the funnel has no English build.</p></div>
     </div>
   </div>
 
@@ -199,22 +210,50 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
 <section id="trend">
   <div class="wrap">
     <h2>The trend</h2>
-    <p class="h2sub">Interest over time · wego6</p>
-    <p class="lede">Flat at zero until <strong>March 2026</strong>, then straight to peak, four months holding between 50 and 85, a dip in late June — and a hard climb back to near-peak in the last few weeks.</p>
+    <p class="h2sub">wego6 · 3 countries × 5 timeframes · captured from Google Trends, 27 July 2026</p>
 
-    <figure class="shot">
-      <img src="assets/uk-trend-12m.png" alt="Google Trends: wego6, United Kingdom, past 12 months. Flat until March 2026, spike to 100, sustained 50–85, dip in late June, sharp rise at the end.">
-      <figcaption>United Kingdom · past 12 months · captured from Google Trends. This is a brand in its growth phase, not a spent one — the curve is still going up at the right-hand edge.</figcaption>
-    </figure>
+    <p class="lede">All fifteen charts below are ours, pulled from a signed-in Google Trends session. Read the <strong>daily</strong> charts, not the 12-month one — that is where the real story is, and the two disagree.</p>
 
     <div class="note bad">
-      <span class="nt">What I could not capture myself</span>
-      <p>I could not pull the 5-timeframe grid across NL, DE and UK. Google is refusing chart data to this machine on <strong>every surface I tried</strong> — the explore page, the internal data endpoint, a hand-built embed, and Google's own official embed loader — all returning <strong>429</strong>, from our server IP and from fresh residential exits in four countries. The last test returned <span class="mono">429 embed/explore/TIMESERIES</span>. A retry is running in the background and I will fill this grid the moment it clears. <strong>I have not estimated or described any chart I did not capture.</strong></p>
+      <span class="nt">Correction to what I told you earlier</span>
+      <p>I said this brand was born in March 2026 and had held demand for four months. <strong>That was wrong</strong>, and the daily data shows why. The 12-month chart is weekly-bucketed, so a handful of isolated one-day spikes in April and May get smeared into what looks like months of steady interest. The 90-day chart, which is daily, shows the truth: <strong>four isolated single-day spikes in late April and May, nothing at all through June, and sustained daily demand only from about 14 July.</strong></p>
     </div>
 
-    <div class="note">
-      <span class="nt">Better than an index, if you want it</span>
-      <p>Google Trends is a 0–100 index — it shows shape, never size. <strong>Keyword Planner gives the actual monthly search volume per country</strong>, which answers "is this worth building" far better. The only account we have API access to is a client's, so I am not touching it for our own research without your word. Say go and I will pull exact NL/DE/UK volumes for every wego6 query.</p>
+    <div class="note good">
+      <span class="nt">What that actually means — it is better news, not worse</span>
+      <p>This brand is roughly <strong>two to three weeks old</strong> in all three countries, and all three turned on within days of each other (NL ~11 July, DE ~4 July, UK ~14 July). We are not late to this one. The UK curve is the steepest and hit its 30-day high two days ago; Germany is sustained and rising; the Netherlands is real but sitting lower in its own range.</p>
+    </div>
+
+    <h3 class="geoh">Netherlands<span>NL</span></h3>
+    <div class="grid">
+      <figure class="shot"><a href="assets/trends/NL_1d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/NL_1d.png" alt="Google Trends: wego6, Netherlands, Past day"></a><figcaption>Past day</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/NL_7d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/NL_7d.png" alt="Google Trends: wego6, Netherlands, Past 7 days"></a><figcaption>Past 7 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/NL_30d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/NL_30d.png" alt="Google Trends: wego6, Netherlands, Past 30 days"></a><figcaption>Past 30 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/NL_90d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/NL_90d.png" alt="Google Trends: wego6, Netherlands, Past 90 days"></a><figcaption>Past 90 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/NL_12m.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/NL_12m.png" alt="Google Trends: wego6, Netherlands, Past 12 months"></a><figcaption>Past 12 months</figcaption></figure>
+    </div>
+
+    <h3 class="geoh">Germany<span>DE</span></h3>
+    <div class="grid">
+      <figure class="shot"><a href="assets/trends/DE_1d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/DE_1d.png" alt="Google Trends: wego6, Germany, Past day"></a><figcaption>Past day</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/DE_7d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/DE_7d.png" alt="Google Trends: wego6, Germany, Past 7 days"></a><figcaption>Past 7 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/DE_30d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/DE_30d.png" alt="Google Trends: wego6, Germany, Past 30 days"></a><figcaption>Past 30 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/DE_90d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/DE_90d.png" alt="Google Trends: wego6, Germany, Past 90 days"></a><figcaption>Past 90 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/DE_12m.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/DE_12m.png" alt="Google Trends: wego6, Germany, Past 12 months"></a><figcaption>Past 12 months</figcaption></figure>
+    </div>
+
+    <h3 class="geoh">United Kingdom<span>GB</span></h3>
+    <div class="grid">
+      <figure class="shot"><a href="assets/trends/GB_1d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/GB_1d.png" alt="Google Trends: wego6, United Kingdom, Past day"></a><figcaption>Past day</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/GB_7d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/GB_7d.png" alt="Google Trends: wego6, United Kingdom, Past 7 days"></a><figcaption>Past 7 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/GB_30d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/GB_30d.png" alt="Google Trends: wego6, United Kingdom, Past 30 days"></a><figcaption>Past 30 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/GB_90d.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/GB_90d.png" alt="Google Trends: wego6, United Kingdom, Past 90 days"></a><figcaption>Past 90 days</figcaption></figure>
+      <figure class="shot"><a href="assets/trends/GB_12m.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/trends/GB_12m.png" alt="Google Trends: wego6, United Kingdom, Past 12 months"></a><figcaption>Past 12 months</figcaption></figure>
+    </div>
+
+    <div class="note warn">
+      <span class="nt">One thing these charts cannot tell you</span>
+      <p>Every Trends chart is scaled to its own country and its own window — 100 means "this country's busiest day in this window", not a number of searches. So <strong>the Dutch 20 and the German 45 are not comparable</strong>, and nothing here says which market is bigger. That needs real volumes, which is what the Keyword Planner access is for. It is applied for and pending.</p>
     </div>
   </div>
 </section>
@@ -346,17 +385,17 @@ a:focus-visible,.toc a:focus-visible{outline:2px solid var(--bar);outline-offset
   <div class="wrap">
     <h2>What I'd build</h2>
     <p class="h2sub">If you say go</p>
-    <p class="lede">A new site, new design, Dutch first and German second — the two places where we actually have something to sell.</p>
+    <p class="lede">A new site, new design, German first and Dutch second — the two places where we actually have something to sell.</p>
     <ul>
       <li><strong>Review-and-verdict site</strong> that answers the doubt query and sends the reader to the funnel. <strong>No competitor and no cheaper price is ever named on our pages</strong> — we are not doing the pharmacies' marketing for them.</li>
       <li><strong>Own the doubt queries</strong>, which is where the volume and the weak competition meet: <em>wego6 ervaringen · wego6 seriös · wego6 fake · wego6 kopen · wego6 kaufen · wego6 test · wego6 höhle der löwen</em>.</li>
-      <li><strong>NL first.</strong> Four thin competitors, no retail chain undercutting us, $75 a sale. Germany second — more searches but Shop Apotheke, DocMorris and the Verbraucherzentrale all sit on page one.</li>
+      <li><strong>Germany first.</strong> $80 a sale, the curve is still rising, and the doubt-query pool is the deepest of the three. The Netherlands second — thinner competition, but its curve is currently sitting lower in its own range.</li>
       <li>Our own privacy / terms / disclosure / contact pages, full AEO pack, no review markup, no invented star ratings, no fabricated "was" prices.</li>
       <li><strong>Domains free right now:</strong> <span class="mono">wego6review.com · wego6check.com · wego6kapseln.com · wego6ervaringen.com · wego6guide.com · wego6facts.com · wego6report.com · wego6review.nl · wego6check.de</span>. Taken already: <span class="mono">wego6check.nl · wego6-ervaringen.nl · wego6official.nl</span>.</li>
     </ul>
     <div class="note">
       <span class="nt">Honest expectation</span>
-      <p>This is a fad-brand play with a live clock on it, same as every one of these. The demand is real today; the German retail listings mean part of that demand now converts at a pharmacy instead of through us. NL is the cleaner bet. I'd rather tell you that before we build than after.</p>
+      <p>This brand is about three weeks old. That is the whole opportunity and the whole risk: we are early enough to rank before the SERP fills, and brands on this curve can fade as fast as they arrived. Ship fast, don't polish for a month.</p>
     </div>
   </div>
 </section>
